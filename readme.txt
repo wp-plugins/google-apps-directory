@@ -1,13 +1,13 @@
 === Plugin Name ===
 Contributors: danlester
-Tags: google apps login, employee directory, company, directory, employee, extranet, intranet, profile, staff, google, staff directory
+Tags: google apps login, employee directory, company, directory, employee, extranet, intranet, profile, staff, google, staff directory, widget
 Requires at least: 3.8
 Tested up to: 3.9
 Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Search your Google Apps domain for employee info from a widget
+Search your Google Apps domain for employee info (from a widget)
 
 == Description ==
 
@@ -52,6 +52,11 @@ of mind that only authorized employees have access to the organizations's websit
 
 Please see our website [http://wp-glogin.com/](http://wp-glogin.com/?utm_source=Dir%20Readme%20Website&utm_medium=freemium&utm_campaign=Dir) 
 for more information about all our products, and to join our mailing list. 
+
+== Screenshots ==
+
+1. Add the widget to any widget area, then logged in users can search your Google Apps domain for employee details.
+2. Configuration is through Google Apps Login plugin, including set up of a Service Account.
 
 == Frequently Asked Questions ==
 
