@@ -2,8 +2,8 @@
 Contributors: danlester
 Tags: google apps login, employee directory, company, directory, employee, extranet, intranet, profile, staff, google, staff directory, widget
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -109,6 +109,10 @@ or upload the ZIP file directly in the Plugins section of your Wordpress admin
 
 
 == Changelog ==
+
+= 1.1 =
+
+Email addresses now display as 'mailto' hyperlinks.
 
 = 1.0 =
 

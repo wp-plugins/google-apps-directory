@@ -23,7 +23,8 @@ jQuery(document).ready(function ($) {
 					thisdiv.append(imgdiv);
 					var textdiv = $('<div></div>', {class: 'gad-user-textinfo'});
 					textdiv.append($('<div></div>', {class: 'gad-user-name'}).append(document.createTextNode(response.users[i].fullName)));
-					textdiv.append($('<div></div>', {class: 'gad-user-email'}).append(document.createTextNode(response.users[i].primaryEmail)));
+					textdiv.append($('<div></div>', {class: 'gad-user-email'}).append($('<a></a>',{href: 'mailto:'+response.users[i].primaryEmail})
+																				.append(document.createTextNode(response.users[i].primaryEmail))));
 					thisdiv.append(textdiv);
 					outp.append(thisdiv);
 				}
