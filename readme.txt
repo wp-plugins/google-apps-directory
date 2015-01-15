@@ -3,7 +3,7 @@ Contributors: danlester
 Tags: google apps login, employee directory, company, directory, employee, extranet, intranet, profile, staff, google, staff directory, widget
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,28 @@ plugin page, but we recommend sending us an email instead if possible.
 *  PHP 5.3.x or higher
 *  Wordpress 3.8 or above
 
+= Can I add custom fields? =
+
+There are hooks (from version 1.2) to add your own fields. For example:
+
+add_filter('gad_extract_user_data', 'my_gad_extract_user_data', 10,2);
+
+function my_gad_extract_user_data($user_outdata, $u) {
+   // $u contains data returned from Google
+   $phone = $u->getPhones()[0]['value'];
+   // Add extra custom data for this user
+   $user_outdata['phone'] = 'Phone: '.$phone;
+   return $user_outdata;
+}
+
+add_filter('gad_extra_output_fields', 'my_gad_extra_output_fields', 10,1);
+
+// Tell javascript widget extra fields to pull from the array extracted above
+function my_gad_extra_output_fields($infields) {
+   return 'phone,'.$infields;
+}
+ 
+
 == Installation ==
 
 For Google Apps Directory to work, you will need also need to install and configure the Google Apps Login plugin 
@@ -109,6 +131,10 @@ or upload the ZIP file directly in the Plugins section of your Wordpress admin
 
 
 == Changelog ==
+
+= 1.2 =
+
+Hooks provided so you can add extra fields. See FAQ.
 
 = 1.1 =
 

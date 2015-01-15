@@ -23,7 +23,8 @@ class GAD_Widget extends WP_Widget {
 		wp_localize_script('gad_widget_js', 'gad_vars', array(
 			'nonce' => wp_create_nonce('gad-nonce'),
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			'spinnerurl' => admin_url( "images/spinner.gif" )
+			'spinnerurl' => admin_url( "images/spinner.gif" ),
+			'extraoutputfields' => apply_filters('gad_extra_output_fields', '')
 		));
 		wp_enqueue_style( 'gad_widget_css' );
 	}

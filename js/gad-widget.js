@@ -16,6 +16,9 @@ jQuery(document).ready(function ($) {
 			var outp = $('<div></div>', {class: 'gad-users'});
 			if (response.users && response.users.length > 0) {
 				
+				// Any extra fields to display?
+				var extraoutputfields = (typeof(gad_vars.extraoutputfields)=="string" ? gad_vars.extraoutputfields.split(",") : Array());
+				
 				for (var i=0; i < response.users.length ; ++i) {
 					var thisdiv = $('<div></div>', {class: 'gad-user'});
 					var imgdiv = $('<div></div>', {class: 'gad-user-imgdiv'});
@@ -25,6 +28,15 @@ jQuery(document).ready(function ($) {
 					textdiv.append($('<div></div>', {class: 'gad-user-name'}).append(document.createTextNode(response.users[i].fullName)));
 					textdiv.append($('<div></div>', {class: 'gad-user-email'}).append($('<a></a>',{href: 'mailto:'+response.users[i].primaryEmail})
 																				.append(document.createTextNode(response.users[i].primaryEmail))));
+					
+					for (var j=0; j < extraoutputfields.length ; ++j) {
+						var fieldname = extraoutputfields[j].trim();
+						var outval = (response.users[i])[fieldname];
+						if (outval) {
+							textdiv.append($('<div></div>', {class: 'gad-user-extrafield'}).append(document.createTextNode(outval)));
+						}
+					}
+					
 					thisdiv.append(textdiv);
 					outp.append(thisdiv);
 				}
