@@ -135,6 +135,10 @@ or upload the ZIP file directly in the Plugins section of your Wordpress admin
 
 == Changelog ==
 
+= 1.2.1 =
+
+Ability for extensions to remove people from the results - by returning null from the filter gad_extract_user_data.
+
 = 1.2 =
 
 Hooks provided so you can add extra fields. See FAQ.
