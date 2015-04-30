@@ -76,22 +76,22 @@ plugin page, but we recommend sending us an email instead if possible.
 
 There are hooks (from version 1.2) to add your own fields. For example:
 
-add_filter('gad_extract_user_data', 'my_gad_extract_user_data', 10,2);
+    add_filter('gad_extract_user_data', 'my_gad_extract_user_data', 10,2);
 
-function my_gad_extract_user_data($user_outdata, $u) {
-   // $u contains data returned from Google
-   $phone = $u->getPhones()[0]['value'];
-   // Add extra custom data for this user
-   $user_outdata['phone'] = 'Phone: '.$phone;
-   return $user_outdata;
-}
+    function my_gad_extract_user_data($user_outdata, $u) {
+       // $u contains data returned from Google
+       $phone = $u->getPhones()[0]['value'];
+       // Add extra custom data for this user
+       $user_outdata['phone'] = 'Phone: '.$phone;
+       return $user_outdata;
+    }
 
-add_filter('gad_extra_output_fields', 'my_gad_extra_output_fields', 10,1);
+    add_filter('gad_extra_output_fields', 'my_gad_extra_output_fields', 10,1);
 
-// Tell javascript widget extra fields to pull from the array extracted above
-function my_gad_extra_output_fields($infields) {
-   return 'phone,'.$infields;
-}
+    // Tell javascript widget extra fields to pull from the array extracted above
+    function my_gad_extra_output_fields($infields) {
+       return 'phone,'.$infields;
+    }
  
 
 == Installation ==
