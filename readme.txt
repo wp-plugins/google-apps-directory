@@ -82,7 +82,7 @@ There are hooks (from version 1.2) to add your own fields. For example, you coul
        // $u contains data returned from Google
        $phones = $u->getPhones();
        if (is_array($phones) && count($phones) > 0) {
-           $phone = phones[0]['value'];
+           $phone = $phones[0]['value'];
            // Add extra custom data for this user
            $user_outdata['phone'] = 'Phone: '.$phone;
        }
