@@ -140,7 +140,7 @@ class basic_google_apps_directory {
 				 * When keys don't match etc
 				* Error refreshing the OAuth2 token, message: '{ "error" : "invalid_grant" }'
 				*/
-				$msg = 'Error - please check your private key and service account email are correct in Settings -> Google Apps Login (Service Account settings)';
+				$msg = 'Error - please check your JSON key and service account email are still valid in Settings -> Google Apps Login (Service Account settings)';
 			}
 			else if (preg_match('/Error refreshing the OAuth2 token.+unauthorized_client/s', $error)) {
 				/*
