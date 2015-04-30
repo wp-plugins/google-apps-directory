@@ -3,7 +3,7 @@ Contributors: danlester
 Tags: google apps login, employee directory, company, directory, employee, extranet, intranet, profile, staff, google, staff directory, widget
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -74,15 +74,18 @@ plugin page, but we recommend sending us an email instead if possible.
 
 = Can I add custom fields? =
 
-There are hooks (from version 1.2) to add your own fields. For example:
+There are hooks (from version 1.2) to add your own fields. For example, you could add the following code to your functions.php file of your Theme:
 
     add_filter('gad_extract_user_data', 'my_gad_extract_user_data', 10,2);
 
     function my_gad_extract_user_data($user_outdata, $u) {
        // $u contains data returned from Google
-       $phone = $u->getPhones()[0]['value'];
-       // Add extra custom data for this user
-       $user_outdata['phone'] = 'Phone: '.$phone;
+       $phones = $u->getPhones();
+       if (is_array($phones) && count($phones) > 0) {
+           $phone = phones[0]['value'];
+           // Add extra custom data for this user
+           $user_outdata['phone'] = 'Phone: '.$phone;
+       }
        return $user_outdata;
     }
 

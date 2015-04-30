@@ -4,7 +4,7 @@
  * Plugin Name: Google Apps Directory
  * Plugin URI: http://wp-glogin.com/directory/
  * Description: Search your Google Apps domain for employee info from a widget
- * Version: 1.2
+ * Version: 1.2.1
  * Author: Dan Lester
  * Author URI: http://wp-glogin.com/
  * License: GPL3
@@ -98,7 +98,9 @@ class basic_google_apps_directory {
 						'thumbnailPhotoUrl' => $u->getThumbnailPhotoUrl()
 					);
 					$user_outdata = apply_filters('gad_extract_user_data', $user_outdata, $u);
-					$outdata[] = $user_outdata;
+					if ($user_outdata) {
+						$outdata[] = $user_outdata;
+					}
 				}
 		
 				$nextToken = $usersresult->getNextPageToken();
