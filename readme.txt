@@ -3,7 +3,7 @@ Contributors: danlester
 Tags: google apps login, employee directory, company, directory, employee, extranet, intranet, profile, staff, google, staff directory, widget
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -134,6 +134,10 @@ or upload the ZIP file directly in the Plugins section of your Wordpress admin
 
 
 == Changelog ==
+
+= 1.2.2 =
+
+Allow html markup in extra fields.
 
 = 1.2.1 =
 

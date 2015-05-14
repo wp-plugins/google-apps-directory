@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
 						var fieldname = extraoutputfields[j].trim();
 						var outval = (response.users[i])[fieldname];
 						if (outval) {
-							textdiv.append($('<div></div>', {class: 'gad-user-extrafield'}).append(document.createTextNode(outval)));
+							textdiv.append($('<div>'+outval+'</div>', {class: 'gad-user-extrafield'}));
 						}
 					}
 					
